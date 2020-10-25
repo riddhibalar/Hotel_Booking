@@ -1,0 +1,156 @@
+﻿@model ProjectHotelBooking.Models.Users
+
+<section class="home-slider owl-carousel" style="height:600px;">
+    <div class="slider-item" style="background-image:url(/images/bg_1.jpg); height:600px;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-12 ftco-animate text-center">
+                    <div class="text mb-5 pb-3">
+                        <h1 class="mb-3">Welcome To Deluxe</h1>
+                        <h2>Hotels &amp; Resorts</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-item" style="background-image:url(/images/bg_2.jpg); height:600px;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-12 ftco-animate text-center">
+                    <div class="text mb-5 pb-3">
+                        <h1 class="mb-3">Enjoy A Luxury Experience</h1>
+                        <h2>Join With Us</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login V14</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="~/Content/util.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/main.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/animate.css">
+    <link rel="stylesheet" href="~/Content/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/Content/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/aos.css">
+    <link rel="stylesheet" href="~/Content/ionicons.min.css">
+    <link rel="stylesheet" href="~/Content/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/Content/jquery.timepicker.css">
+    <link rel="stylesheet" href="~/Content/flaticon.css">
+    <link rel="stylesheet" href="~/Content/icomoon.css">
+    <link rel="stylesheet" href="~/Content/style.css">
+    <link rel="stylesheet" href="~/Content/demo.css">
+
+</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55" style="width:800px;margin-bottom:100px;margin-top:17px;">
+                <div class="row justify-content-center mb-5 pb-3" >
+                    <div class="col-md-7 heading-section text-center ftco-animate">
+                        <h2 class="mb-4">SignUp</h2>
+                    </div>
+                </div>
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post,htmlAttributes:new { @style="margin-bottom:100px;"}))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                    <span class="txt1 p-b-11">
+                        @Html.LabelFor(model => model.FirstName)
+                    </span>
+                    <div class="wrap-input100 validate-input m-b-36" data-validate="Eamail is required">
+                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "input100" } })
+                        <span class="focus-input100"></span>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                    <br />
+                    <span class="txt1 p-b-11">
+                        @Html.LabelFor(model => model.LastName)
+                    </span>
+                    <div class="wrap-input100 validate-input m-b-36" data-validate="Eamail is required">
+                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "input100" } })
+                        <span class="focus-input100"></span>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                    <br />
+
+                    <span class="txt1 p-b-11">
+                        @Html.LabelFor(model => model.Password)
+                    </span>
+                    <div class="wrap-input100 validate-input m-b-12" data-validate="Password is required">
+                        <span class="btn-show-pass">
+                            <i class="fa fa-eye"></i>
+                        </span>
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "input100" } })
+                        <span class="focus-input100"></span>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    <br />
+
+                    <span class="txt1 p-b-11">
+                        @Html.LabelFor(model => model.ConfirmPassword)
+                    </span>
+                    <div class="wrap-input100 validate-input m-b-12" data-validate="Password is required">
+                        <span class="btn-show-pass">
+                            <i class="fa fa-eye"></i>
+                        </span>
+                        @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "input100" } })
+                        <span class="focus-input100"></span>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                    <br />
+
+                    <span class="txt1 p-b-11">
+                        @Html.LabelFor(model => model.Email)
+                    </span>
+                    <div class="wrap-input100 validate-input m-b-36" data-validate="Eamail is required">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input100" } })
+                        <span class="focus-input100"></span>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    <br />
+
+                    <span class="txt1 p-b-11">
+                        @Html.LabelFor(model => model.ContactNumber)
+                    </span>
+                    <div class="wrap-input100 validate-input m-b-36" data-validate="Eamail is required">
+                        @Html.EditorFor(model => model.ContactNumber, new { htmlAttributes = new { @class = "input100" } })
+                        <span class="focus-input100"></span>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "text-danger" })
+                    <br />
+                    <br />
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn">
+                            Login
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

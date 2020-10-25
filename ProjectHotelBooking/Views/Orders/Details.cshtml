@@ -1,0 +1,85 @@
+﻿@model ProjectHotelBooking.Models.Orders
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Orders</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Rooms.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rooms.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Users.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Users.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contactno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contactno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.checkin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.checkin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.checkout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.checkout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.number_of_rooms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.number_of_rooms)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<div>
+    @Html.ActionLink("Back to Home", "AdminLoggedIn", "Account")
+</div>

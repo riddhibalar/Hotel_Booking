@@ -1,0 +1,99 @@
+﻿@model ProjectHotelBooking.Models.Users
+@{
+    ViewBag.Title = "Manage";
+}
+
+<section class="home-slider owl-carousel" style="height:600px;">
+    <div class="slider-item" style="background-image:url(/images/bg_1.jpg); height:600px;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-12 ftco-animate text-center">
+                    <div class="text mb-5 pb-3">
+                        <h1 class="mb-3">Welcome To Deluxe</h1>
+                        <h2>Hotels &amp; Resorts</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-item" style="background-image:url(images/bg_2.jpg); height:600px;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-12 ftco-animate text-center">
+                    <div class="text mb-5 pb-3">
+                        <h1 class="mb-3">Enjoy A Luxury Experience</h1>
+                        <h2>Join With Us</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="row justify-content-center mb-5 pb-3" style="margin-top:80px;">
+    <div class="col-md-7 heading-section text-center ftco-animate">
+        <h2 class="mb-4">Your Profile</h2>
+    </div>
+</div>
+<div class="justify-content-center" style="margin-top:-30px;">
+    <dl class="dl-horizontal">
+        <div class="row justify-content-center">
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName) &nbsp;: &nbsp;
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+        </div>
+        <div class="row justify-content-center">
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName) &nbsp;: &nbsp;
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+        </div>
+        <div class="row justify-content-center">
+            <dt>
+                @Html.DisplayNameFor(model => model.Email) &nbsp;: &nbsp;
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+        </div>
+        <div class="row justify-content-center">
+            <dt>
+                @Html.DisplayNameFor(model => model.Password) &nbsp;: &nbsp;
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Password)
+            </dd>
+        </div>
+        <div class="row justify-content-center">
+            <dt>
+                @Html.DisplayNameFor(model => model.ContactNumber) &nbsp;: &nbsp;
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ContactNumber)
+            </dd>
+        </div>
+
+</dl>
+</div>
+<div style="margin-bottom:100px;">
+    <center>
+        <div style="border:none;width:100px;background-color:#FF8D1E;border-radius:30px; margin-right:6%" class="row justify-content-center ">
+            @Html.ActionLink("Edit", "Edit", "Account", new { @class = "text-white py-2 px-5 font-weight-bold", id = Model.UserID })
+        </div>
+
+        <div style="border:none;width:100px;background-color:#FF8D1E;border-radius:30px;margin-left:6%;margin-top:-42px;" class="row justify-content-center ">
+            @Html.ActionLink("My Bookings", "mybookings", "Account", new { @class = "text-white py-2 px-5 font-weight-bold" })
+        </div>
+    </center>
+</div>

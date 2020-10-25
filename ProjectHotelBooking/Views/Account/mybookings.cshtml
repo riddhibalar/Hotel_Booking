@@ -1,0 +1,93 @@
+﻿@model IEnumerable<ProjectHotelBooking.Models.Orders>
+
+@{
+    ViewBag.Title = "mybookings";
+}
+    <section class="home-slider owl-carousel" style="height:600px;">
+        <div class="slider-item" style="background-image:url(/images/bg_1.jpg); height:600px;">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row no-gutters slider-text align-items-center justify-content-center">
+                    <div class="col-md-12 ftco-animate text-center">
+                        <div class="text mb-5 pb-3">
+                            <h1 class="mb-3">Welcome To Deluxe</h1>
+                            <h2>Hotels &amp; Resorts</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-item" style="background-image:url(images/bg_2.jpg); height:600px;">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row no-gutters slider-text align-items-center justify-content-center">
+                    <div class="col-md-12 ftco-animate text-center">
+                        <div class="text mb-5 pb-3">
+                            <h1 class="mb-3">Enjoy A Luxury Experience</h1>
+                            <h2>Join With Us</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="row justify-content-center mb-5 pb-3" style="margin-top:80px;">
+        <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Your Bookings</h2>
+        </div>
+    </div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Rooms.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contactno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.checkin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.checkout)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.number_of_rooms)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rooms.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contactno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.checkin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.checkout)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.number_of_rooms)
+        </td>
+    </tr>
+}
+
+</table>
